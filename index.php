@@ -1,3 +1,15 @@
+<?php 
+    $host="localhost";
+    $root="root";
+    $mdp="";
+    $db="petsy";
+    $connexion=new mysqli($host,$root,$mdp,$db);
+    if (mysqli_connect_errno()) {
+        echo "Erreur de connexion à la base de données !";
+    }
+    $query1 = "SELECT * FROM animal";
+    $result1 = $connexion->query($query1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +21,15 @@
 </head>
 
 <body>
+    
     <h1 class="center">Petsy</h1>
     <h6>E-commerce</h6>
     <p><?php echo "Hello World" ?></p>
+    <?php while($row = $result1->fetch_assoc()){?>
+        <h2><?php echo $row['nom'] ?></h2>
+    <?php
+        } 
+    ?>
 </body>
 
 </html>
