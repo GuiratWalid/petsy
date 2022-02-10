@@ -11,6 +11,7 @@
 <body>
     <h1 class="center">Petsy</h1>
     <h6>E-commerce</h6>
+    <p><?php echo "Hello World" ?></p>
 </body>
 
 </html>
